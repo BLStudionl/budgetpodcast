@@ -319,7 +319,7 @@ img{max-width:100%;display:block}
     <div class="price-grid">
       <article class="card">
         <h3>Losse aflevering</h3>
-        <p class="kicker">30 minuten</p>
+        <p class="kicker">30 minuten in de studio, waarvan maximaal 20 minuten opname</p>
         <div class="price" id="singlePrice"></div>
         <ul class="feature-list" id="singleFeatures"></ul>
         <button class="btn btn-soft btn-full" data-book="single" id="singleCta"></button>
@@ -327,7 +327,7 @@ img{max-width:100%;display:block}
       <article class="card card-featured">
         <span class="badge hidden" id="bundleBadge">Tijdelijke actie</span>
         <h3 id="bundleTitle"></h3>
-        <p class="kicker">Maximaal 30 minuten per aflevering</p>
+        <p class="kicker">Per aflevering 30 minuten in de studio, waarvan maximaal 20 minuten opname</p>
         <div class="price" id="bundlePrice"></div>
         <div class="savings" id="bundleSavings"></div>
         <p class="condition" id="bundleCondition"></p>
@@ -518,7 +518,7 @@ const siteConfig = {
     {q:"Moet ik ervaring hebben met podcasten?",
      a:"Nee. Alles staat klaar en we helpen je waar nodig."},
     {q:"Hoe lang duurt een aflevering?",
-     a:"De opnametijd per aflevering is maximaal 30 minuten."},
+     a:"Je hebt per aflevering 30 minuten in de studio, waarvan maximaal 20 minuten voor de opname."},
     {q:"Met hoeveel personen kan ik opnemen?",
      a:"De studio is ingericht voor twee personen aan tafel. Dat werkt goed voor diepte-interviews, coachingsgesprekken en nieuwsitems."},
     {q:"Krijg ik audio én video?",
@@ -561,7 +561,7 @@ if(promoOn()){
 }
 $("#singlePrice").textContent = euro(P.singleEpisodePrice);
 $("#singleCta").textContent = "Boek voor " + euro(P.singleEpisodePrice);
-$("#singleFeatures").innerHTML = ["Maximaal "+P.episodeMinutes+" minuten opname"].concat(cfg.included)
+$("#singleFeatures").innerHTML = [P.episodeMinutes+" minuten in de studio, waarvan maximaal 20 minuten opname"].concat(cfg.included)
   .map(f => "<li>"+checkSvg+"<span>"+f+"</span></li>").join("");
 
 $("#bundleTitle").textContent = P.bundleEpisodes + " afleveringen";
@@ -571,10 +571,10 @@ $("#bundlePrice").innerHTML = promoOn()
 if(promoOn()){ $("#bundleSavings").textContent = "Je bespaart " + euro(savings()); }
 else { $("#bundleSavings").classList.add("hidden"); }
 $("#bundleCondition").textContent = P.bundleConsecutive
-  ? "De drie opnames worden achter elkaar gepland, in één sessie van " + (P.bundleEpisodes*P.episodeMinutes) + " minuten."
+  ? "De drie afleveringen worden achter elkaar gepland: " + (P.bundleEpisodes*P.episodeMinutes) + " minuten studiotijd in totaal, waarvan maximaal " + (P.bundleEpisodes*20) + " minuten opname."
   : "";
 $("#bundleFeatures").innerHTML =
-  [P.bundleEpisodes+" podcastafleveringen achter elkaar opgenomen","Maximaal "+P.episodeMinutes+" minuten per aflevering"]
+  [P.bundleEpisodes+" podcastafleveringen achter elkaar opgenomen",P.episodeMinutes+" minuten in de studio per aflevering, waarvan maximaal 20 minuten opname"]
   .concat(cfg.included).map(f => "<li>"+checkSvg+"<span>"+f+"</span></li>").join("");
 $("#bundleCta").textContent = promoOn()
   ? "Boek " + P.bundleEpisodes + " afleveringen voor " + euro(P.bundlePromoPrice)
@@ -673,9 +673,9 @@ const calLinks = {
 
 $("#pkgTabs").innerHTML =
   '<button class="pkg-tab" data-pkg="single" role="tab">1 aflevering'+
-  '<small>'+P.episodeMinutes+' minuten, '+euro(P.singleEpisodePrice)+'</small></button>'+
+  '<small>'+P.episodeMinutes+' minuten studio (max. 20 minuten opname), '+euro(P.singleEpisodePrice)+'</small></button>'+
   '<button class="pkg-tab" data-pkg="bundle" role="tab">'+P.bundleEpisodes+' afleveringen'+
-  '<small>'+(P.bundleEpisodes*P.episodeMinutes)+' minuten achter elkaar, '+
+  '<small>'+(P.bundleEpisodes*P.episodeMinutes)+' minuten studio (max. '+(P.bundleEpisodes*20)+' minuten opname), '+
   (promoOn() ? "tijdelijk " : "")+euro(bundleAmount())+'</small></button>';
 
 function showBooking(pkg){
