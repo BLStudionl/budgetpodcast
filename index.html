@@ -461,7 +461,7 @@ const siteConfig = {
     singleEpisodePrice:75,
     episodeMinutes:30,
     bundleEpisodes:3,
-    bundlePromoPrice:150,
+    bundlePromoPrice:180,
     promotionActive:true,
     promotionLabel:"Tijdelijke actie",
     promotionStartDate:null,
@@ -555,7 +555,7 @@ if(cfg.media.heroImage){
 }
 if(promoOn()){
   $("#heroPromo").classList.remove("hidden");
-  $("#heroPromoText").textContent = "Tijdelijk: " + P.bundleEpisodes + " afleveringen voor " + euro(P.bundlePromoPrice);
+  $("#heroPromoText").textContent = "Tijdelijk: " + P.bundleEpisodes + " afleveringen voor " + euro(P.bundlePromoPrice) + " (" + euro(P.bundlePromoPrice / P.bundleEpisodes) + " per aflevering)";
   $("#bundleBadge").classList.remove("hidden");
   $("#bundleBadge").textContent = P.promotionLabel;
 }
@@ -566,8 +566,8 @@ $("#singleFeatures").innerHTML = ["Maximaal "+P.episodeMinutes+" minuten opname"
 
 $("#bundleTitle").textContent = P.bundleEpisodes + " afleveringen";
 $("#bundlePrice").innerHTML = promoOn()
-  ? euro(P.bundlePromoPrice) + ' <small>tijdelijk</small>'
-  : euro(listPrice());
+  ? euro(P.bundlePromoPrice) + ' <small>(€' + (P.bundlePromoPrice / P.bundleEpisodes) + ' per aflevering)</small>'
+  : euro(listPrice()) + ' <small>(€' + (listPrice() / P.bundleEpisodes) + ' per aflevering)</small>';
 if(promoOn()){ $("#bundleSavings").textContent = "Je bespaart " + euro(savings()); }
 else { $("#bundleSavings").classList.add("hidden"); }
 $("#bundleCondition").textContent = P.bundleConsecutive
