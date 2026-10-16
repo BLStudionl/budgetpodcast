@@ -7,7 +7,7 @@
 <meta name="description" content="Jouw verhaal is het waard. Boek een professionele podcaststudio in Den Haag vanaf €75 per aflevering, inclusief audio, video en apparatuur. Je ontvangt je aflevering binnen 24 uur na de opname per e-mail via een downloadlink.">
 <link rel="canonical" href="https://budgetpodcast.nl/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Jouw verhaal is het waard. | budgetpodcast.nl">
+<meta property="og:title" content="Jouw verhaal is het waard. Podcasten zonder gedoe! | budgetpodcast.nl">
 <meta property="og:description" content="Boek een professionele podcaststudio in Den Haag. Audio, video en techniek geregeld.">
 <meta property="og:url" content="https://budgetpodcast.nl/">
 <meta property="og:locale" content="nl_NL">
@@ -298,8 +298,8 @@ img{max-width:100%;display:block}
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <h1>Jouw verhaal<span>is het waard.</span></h1>
-      <p class="lead">Professioneel podcasten zonder gedoe. Boek je studio, kies je moment en kom opnemen. Je ontvangt je aflevering binnen 24 uur na de opname per e-mail via een downloadlink.</p>
+      <h1>Jouw verhaal<span>is het waard.</span></h1><p class="claim">Podcasten zonder gedoe!</p>
+      <p class="lead">Jouw verhaal verdient een podcast en wij willen de drempel graag voor je verlagen. Boek je studiotijd en kom opnemen. Je ontvangt je aflevering binnen 24 uur na de opname per e-mail via een downloadlink.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#boeken">Plan je opname →</a>
         <a class="btn btn-ghost" href="#tarieven">Bekijk tarieven</a>
@@ -317,15 +317,8 @@ img{max-width:100%;display:block}
     <h2>Simpel geprijsd.</h2>
     <p class="muted">Kies wat bij jou past.</p>
     <div class="price-grid">
-      <article class="card">
-        <h3>Losse aflevering</h3>
-        <p class="kicker">30 minuten in de studio, waarvan maximaal 20 minuten opname</p>
-        <div class="price" id="singlePrice"></div>
-        <ul class="feature-list" id="singleFeatures"></ul>
-        <button class="btn btn-soft btn-full" data-book="single" id="singleCta"></button>
-      </article>
       <article class="card card-featured">
-        <span class="badge hidden" id="bundleBadge">Tijdelijke actie</span>
+        <span class="badge" id="bundleBadge">Aanbevolen</span>
         <h3 id="bundleTitle"></h3>
         <p class="kicker">Per aflevering 30 minuten in de studio, waarvan maximaal 20 minuten opname</p>
         <div class="price" id="bundlePrice"></div>
@@ -333,6 +326,13 @@ img{max-width:100%;display:block}
         <p class="condition" id="bundleCondition"></p>
         <ul class="feature-list" id="bundleFeatures"></ul>
         <button class="btn btn-primary btn-full" data-book="bundle" id="bundleCta"></button>
+      </article>
+      <article class="card">
+        <h3>Losse aflevering</h3>
+        <p class="kicker">30 minuten in de studio, waarvan maximaal 20 minuten opname</p>
+        <div class="price" id="singlePrice"></div>
+        <ul class="feature-list" id="singleFeatures"></ul>
+        <button class="btn btn-soft btn-full" data-book="single" id="singleCta"></button>
       </article>
     </div>
   </div>
@@ -352,8 +352,8 @@ img{max-width:100%;display:block}
 
 <section class="section videos" id="video">
   <div class="wrap">
-    <h2>Zo werkt het, in beeld</h2>
-    <p class="muted">Korte filmpjes van maximaal drie minuten. Even kijken en je weet precies wat je kunt verwachten.</p>
+    <h2>Hoe ziet jouw podcastavontuur eruit?</h2>
+    <p class="muted">Bekijk hieronder in korte filmpjes hoe je jouw opname boekt en hoe een opnamesessie verloopt. Zo weet je precies wat je kunt verwachten.</p>
     <div class="video-grid" id="videoGrid"></div>
   </div>
 </section>
@@ -453,7 +453,7 @@ img{max-width:100%;display:block}
 const siteConfig = {
   brand:{
     name:"budgetpodcast.nl",
-    tagline:"Jouw verhaal is het waard.",
+    tagline:"Jouw verhaal is het waard. Podcasten zonder gedoe!",
     claim:"Jouw verhaal verdient een podcast."
   },
 
@@ -463,7 +463,7 @@ const siteConfig = {
     bundleEpisodes:3,
     bundlePromoPrice:180,
     promotionActive:true,
-    promotionLabel:"Tijdelijke actie",
+    promotionLabel:"Aanbevolen",
     promotionStartDate:null,
     promotionEndDate:null,
     bundleConsecutive:true,        // de 3 opnames worden achter elkaar opgenomen
@@ -482,7 +482,7 @@ const siteConfig = {
     {icon:"🎙", title:"Professionele audio & video", sub:"Heldere opnames"},
     {icon:"👥", title:"Opnemen met twee personen", sub:"Interviews, coaching, nieuws"},
     {icon:"⚡", title:"Binnen 24 uur", sub:"Ontvang je aflevering per e-mail"},
-    {icon:"🏠", title:"Studio inbegrepen", sub:"Techniek staat klaar"},
+    {icon:"🏠", title:"Alles staat voor je klaar", sub:"Professionele apparatuur voor twee sprekers"},
     {icon:"👍", title:"Geen ervaring nodig", sub:"We helpen je op weg"},
     {icon:"💶", title:"Betaalbare prijs", sub:"Vanaf €75 per aflevering"}
   ],
