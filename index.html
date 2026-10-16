@@ -245,6 +245,7 @@ img{max-width:100%;display:block}
 .studio-media-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start;margin:30px auto;max-width:1100px}.studio-media-grid .gallery{margin:0;min-width:0}.studio-media-grid .shot,.studio-media-grid .shot:first-child{aspect-ratio:16/9}.studio-media-grid .studio-example{margin:0;min-width:0;text-align:center}.studio-media-grid .studio-example h3{margin:0 0 12px;color:#fff}@media(max-width:720px){.studio-media-grid{grid-template-columns:1fr;gap:28px}}.studio-example{max-width:780px;margin:32px auto;text-align:center}.studio-example h3{color:#fff;margin-bottom:15px}.studio-example .frame{aspect-ratio:16/9;overflow:hidden;border-radius:16px;background:#1c2941}.studio-example iframe{display:block;width:100%;height:100%;border:0}.studio-example .cookie-placeholder{height:100%}
 .studio-video-tip{font-size:13px!important;line-height:1.5!important;color:#c2cede!important;text-align:center!important;max-width:none!important;margin:9px 0 0!important}
 .hero-visual.hero-video{display:flex;flex-direction:column;justify-content:center;min-height:0;background:transparent;box-shadow:none;overflow:visible;gap:7px}.hero-video .frame{width:100%;aspect-ratio:16/9;border-radius:var(--radius-l);overflow:hidden;background:var(--nacht);box-shadow:var(--shadow-l)}.hero-video iframe{width:100%;height:100%;border:0;display:block}.hero-video .cookie-placeholder{height:100%;min-height:0}.hero-video .studio-video-tip{color:var(--grijs-700)!important;margin:3px 0 0!important}.studio-gallery-large{max-width:1020px;margin:30px auto}.studio-gallery-large .shot,.studio-gallery-large .shot:first-child{aspect-ratio:16/9}
+.hero-visual.hero-video{background:#fff;box-shadow:0 5px 22px rgba(15,23,42,.09);border:1px solid #e0e7f0;border-radius:var(--radius-l);overflow:hidden;gap:0;justify-content:flex-start}.hero-video .frame{border-radius:0;box-shadow:none}.hero-video-copy{width:100%;padding:20px 24px 23px;color:var(--nacht)}.hero-video-copy h3{margin:0 0 6px;font-size:1.18rem;line-height:1.35;font-weight:700}.hero-video-copy>p{margin:0;font-size:.91rem;color:var(--grijs-700);line-height:1.55}.hero-video-copy .studio-video-tip{font-size:.78rem!important;text-align:left!important;margin:12px 0 0!important;color:#64748b!important}@media(max-width:600px){.hero-video-copy{padding:17px 19px}}
 /* FAQ */
 .faq{max-width:800px;margin:28px auto 0}
 .qa{border-bottom:1px solid var(--grijs-200)}
@@ -313,7 +314,11 @@ img{max-width:100%;display:block}
           </div>
     <div class="hero-visual hero-video" id="heroVisual">
       <div class="frame" id="studioExampleVideo"></div>
-      <p class="studio-video-tip">Tip: Zet de videokwaliteit op 1080p voor de beste kijkervaring.</p>
+      <div class="hero-video-copy">
+        <h3>Zo ziet jouw opname eruit</h3>
+        <p>Krijg alvast een indruk van de sfeer in onze studio.</p>
+        <p class="studio-video-tip">Tip: Zet de videokwaliteit op 1080p voor de beste kijkervaring.</p>
+      </div>
     </div>
   </div>
 </section>
