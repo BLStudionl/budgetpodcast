@@ -244,6 +244,7 @@ img{max-width:100%;display:block}
 
 .studio-media-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start;margin:30px auto;max-width:1100px}.studio-media-grid .gallery{margin:0;min-width:0}.studio-media-grid .shot,.studio-media-grid .shot:first-child{aspect-ratio:16/9}.studio-media-grid .studio-example{margin:0;min-width:0;text-align:center}.studio-media-grid .studio-example h3{margin:0 0 12px;color:#fff}@media(max-width:720px){.studio-media-grid{grid-template-columns:1fr;gap:28px}}.studio-example{max-width:780px;margin:32px auto;text-align:center}.studio-example h3{color:#fff;margin-bottom:15px}.studio-example .frame{aspect-ratio:16/9;overflow:hidden;border-radius:16px;background:#1c2941}.studio-example iframe{display:block;width:100%;height:100%;border:0}.studio-example .cookie-placeholder{height:100%}
 .studio-video-tip{font-size:13px!important;line-height:1.5!important;color:#c2cede!important;text-align:center!important;max-width:none!important;margin:9px 0 0!important}
+.hero-visual.hero-video{display:flex;flex-direction:column;justify-content:center;min-height:0;background:transparent;box-shadow:none;overflow:visible;gap:7px}.hero-video .frame{width:100%;aspect-ratio:16/9;border-radius:var(--radius-l);overflow:hidden;background:var(--nacht);box-shadow:var(--shadow-l)}.hero-video iframe{width:100%;height:100%;border:0;display:block}.hero-video .cookie-placeholder{height:100%;min-height:0}.hero-video .studio-video-tip{color:var(--grijs-700)!important;margin:3px 0 0!important}.studio-gallery-large{max-width:1020px;margin:30px auto}.studio-gallery-large .shot,.studio-gallery-large .shot:first-child{aspect-ratio:16/9}
 /* FAQ */
 .faq{max-width:800px;margin:28px auto 0}
 .qa{border-bottom:1px solid var(--grijs-200)}
@@ -310,8 +311,9 @@ img{max-width:100%;display:block}
       </div>
       <a class="promo-pill hidden" id="heroPromo" href="#tarieven">🔥 <span id="heroPromoText"></span></a>
           </div>
-    <div class="hero-visual" id="heroVisual">
-      <img class="photo" src="Warme%20podcaststudio%20met%20planten%20en%20microfoons.png" alt="Podcaststudio met twee fauteuils, microfoons en warme sfeerverlichting" loading="eager" fetchpriority="high">
+    <div class="hero-visual hero-video" id="heroVisual">
+      <div class="frame" id="studioExampleVideo"></div>
+      <p class="studio-video-tip">Tip: Zet de videokwaliteit op 1080p voor de beste kijkervaring.</p>
     </div>
   </div>
 </section>
@@ -388,14 +390,7 @@ img{max-width:100%;display:block}
   <div class="wrap">
     <h2>Alles staat voor je klaar.</h2>
     <p>Microfoons, camera's en techniek zijn geregeld. Jij hoeft alleen te komen zitten en te praten. De studio is ingericht voor gesprekken met twee personen, wat werkt voor diepte-interviews, coachingsgesprekken, nieuwsitems etc.</p>
-    <div class="studio-media-grid">
-      <div class="gallery" id="gallery"></div>
-      <div class="studio-example">
-      
-      <div class="frame" id="studioExampleVideo"></div>
-      <p class="studio-video-tip">Tip: Zet de videokwaliteit op 1080p voor de beste kijkervaring.</p>
-      </div>
-    </div>
+    <div class="gallery studio-gallery-large" id="gallery"></div>
     <a class="btn btn-primary" href="#boeken">Plan je opname →</a>
   </div>
 </section>
