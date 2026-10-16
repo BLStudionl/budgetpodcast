@@ -242,7 +242,7 @@ img{max-width:100%;display:block}
 .shot:first-child{grid-column:auto;aspect-ratio:16/9}
 @media(max-width:760px){.gallery{display:block}.shot:first-child{aspect-ratio:4/3}}
 
-.studio-example{max-width:780px;margin:32px auto;text-align:center}.studio-example h3{color:#fff;margin-bottom:15px}.studio-example .frame{aspect-ratio:16/9;overflow:hidden;border-radius:16px;background:#1c2941}.studio-example iframe{display:block;width:100%;height:100%;border:0}.studio-example .cookie-placeholder{height:100%}
+.studio-media-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start;margin:30px auto;max-width:1100px}.studio-media-grid .gallery{margin:0;min-width:0}.studio-media-grid .shot,.studio-media-grid .shot:first-child{aspect-ratio:16/9}.studio-media-grid .studio-example{margin:0;min-width:0;text-align:center}.studio-media-grid .studio-example h3{margin:0 0 12px;color:#fff}@media(max-width:720px){.studio-media-grid{grid-template-columns:1fr;gap:28px}}.studio-example{max-width:780px;margin:32px auto;text-align:center}.studio-example h3{color:#fff;margin-bottom:15px}.studio-example .frame{aspect-ratio:16/9;overflow:hidden;border-radius:16px;background:#1c2941}.studio-example iframe{display:block;width:100%;height:100%;border:0}.studio-example .cookie-placeholder{height:100%}
 /* FAQ */
 .faq{max-width:800px;margin:28px auto 0}
 .qa{border-bottom:1px solid var(--grijs-200)}
@@ -387,10 +387,12 @@ img{max-width:100%;display:block}
   <div class="wrap">
     <h2>Alles staat voor je klaar.</h2>
     <p>Microfoons, camera's en techniek zijn geregeld. Jij hoeft alleen te komen zitten en te praten. De studio is ingericht voor gesprekken met twee personen, wat werkt voor diepte-interviews, coachingsgesprekken, nieuwsitems etc.</p>
-    <div class="gallery" id="gallery"></div>
-    <div class="studio-example">
+    <div class="studio-media-grid">
+      <div class="gallery" id="gallery"></div>
+      <div class="studio-example">
       <h3>Voorbeeld podcast</h3>
       <div class="frame" id="studioExampleVideo"></div>
+      </div>
     </div>
     <a class="btn btn-primary" href="#boeken">Plan je opname →</a>
   </div>
