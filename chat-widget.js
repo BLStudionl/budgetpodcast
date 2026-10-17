@@ -115,7 +115,7 @@
         addMessage("bot","Je hebt geen ervaring nodig. De studio en apparatuur staan klaar en we helpen je op weg.");return;
       }
       if(includesAny(q,["waar","locatie","adres","parkeren","bereikbaar","comfortzone"])){
-        addMessage("bot","Onze podcaststudio is in Den Haag. Voor het exacte adres, parkeren of reisadvies kun je via persoonlijk contact een bericht achterlaten.");return;
+        addMessage("bot","Ons bezoekadres is "+((cfg.contact&&cfg.contact.address)||"Visseringlaan 19, 2288 ER Rijswijk")+". Je kunt de locatie via de contactgegevens op de website openen in Google Maps. Voor specifieke vragen over parkeren of bereikbaarheid helpen we je graag persoonlijk.");return;
       }
       if(includesAny(q,["hoi","hallo","goedemorgen","goedenavond","hey","hi"])){
         addMessage("bot","Hoi! Vraag gerust naar onze prijzen, boekingen, opnametijd of het ontvangen van je bestanden.");return;
