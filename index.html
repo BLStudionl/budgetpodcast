@@ -535,7 +535,7 @@ const siteConfig = {
     ]
   },
 
-  contact:{ email:"info@budgetpodcast.nl", phone:"", address:"", instagram:"", tiktok:"" },
+  contact:{ email:"info@budgetpodcast.nl", phone:"", address:"Visseringlaan 19, 2288 ER Rijswijk", instagram:"", tiktok:"" },
 
   faq:[
     {q:"Moet ik ervaring hebben met podcasten?",
@@ -665,7 +665,7 @@ document.querySelectorAll(".qa button").forEach(btn => btn.addEventListener("cli
 const c = cfg.contact, items = [];
 if(c.email)     items.push(['✉','<a href="mailto:'+c.email+'">'+c.email+'</a>']);
 if(c.phone)     items.push(['☎','<a href="tel:'+c.phone.replace(/\s/g,'')+'">'+c.phone+'</a>']);
-if(c.address)   items.push(['📍', c.address]);
+if(c.address)   items.push(['📍', '<a href="https://www.google.com/maps/search/?api=1&amp;query='+encodeURIComponent(c.address)+'" target="_blank" rel="noopener noreferrer" title="Bekijk de route op Google Maps">'+c.address+'</a>']);
 if(c.instagram) items.push(['◎','<a href="'+c.instagram+'">Instagram</a>']);
 if(c.tiktok)    items.push(['♪','<a href="'+c.tiktok+'">TikTok</a>']);
 $("#contactList").innerHTML = items.length
@@ -778,7 +778,7 @@ showBooking("bundle");
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"budgetpodcast.nl",
 "description":"Podcaststudio in Den Haag. Professioneel podcasten vanaf €75 per aflevering, inclusief audio, video en apparatuur.",
-"url":"https://budgetpodcast.nl/","areaServed":"Den Haag","priceRange":"€€"}
+"url":"https://budgetpodcast.nl/","areaServed":"Den Haag","priceRange":"€€","address":{"@type":"PostalAddress","streetAddress":"Visseringlaan 19","postalCode":"2288 ER","addressLocality":"Rijswijk","addressCountry":"NL"}}
 </script>
 <script src="/chat-config.js" defer></script>
 <script src="/chat-widget.js" defer></script>
