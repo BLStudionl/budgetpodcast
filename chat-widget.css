@@ -29,3 +29,5 @@
 .bp-chat-lead a{color:#0F5AD6}
 @media(max-width:600px){.bp-chat-launcher{bottom:85px;right:15px;padding:12px 15px}.bp-chat{bottom:147px;right:10px;width:calc(100vw - 20px);height:min(530px,calc(100dvh - 160px));border-radius:16px}}
 @media(prefers-reduced-motion:reduce){.bp-chat *{scroll-behavior:auto}}
+
+.bp-chat-actions[hidden],.bp-chat-send[hidden]{display:none}
