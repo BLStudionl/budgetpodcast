@@ -5,5 +5,5 @@
  * Zonder ID blijft de gratis, lokale FAQ-chat met overdracht actief.
  */
 window.BPChatSettings = {
-  conferbotBotId: ""
+  conferbotBotId: "6ad32eef3ca21c5f76489d7f"
 };
