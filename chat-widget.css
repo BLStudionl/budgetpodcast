@@ -1,0 +1,33 @@
+/* BudgetPodcast chatwidget — sluit aan bij de bestaande Poppins/blauwe huisstijl */
+.bp-chat-launcher{position:fixed;right:22px;bottom:23px;z-index:75;display:flex;align-items:center;gap:9px;border:0;border-radius:99px;padding:14px 19px;background:#1E73FF;color:#fff;box-shadow:0 9px 30px rgba(15,23,42,.26);font:600 14px/1.35 Poppins,Arial,sans-serif;cursor:pointer}
+.bp-chat-launcher:hover{background:#0F5AD6}
+.bp-chat-launcher:focus-visible,.bp-chat button:focus-visible,.bp-chat input:focus-visible,.bp-chat textarea:focus-visible{outline:3px solid #1E73FF;outline-offset:3px}
+.bp-chat{position:fixed;right:22px;bottom:88px;z-index:76;width:min(370px,calc(100vw - 26px));height:min(530px,calc(100dvh - 110px));display:flex;flex-direction:column;border:1px solid #dbe5f2;border-radius:20px;background:white;box-shadow:0 18px 60px rgba(15,23,42,.22);font:400 14px/1.55 Poppins,Arial,sans-serif;overflow:hidden}
+.bp-chat[hidden]{display:none}
+.bp-chat-head{padding:16px 18px;background:#1E73FF;color:#fff;display:flex;align-items:center;gap:12px}
+.bp-chat-head strong{font-size:15px}
+.bp-chat-head small{display:block;font-size:11px;opacity:.9}
+.bp-chat-head button{margin-left:auto;color:#fff;background:transparent;border:0;font-size:26px;line-height:1;cursor:pointer}
+.bp-chat-logo{width:35px;height:35px;background:rgba(255,255,255,.2);border-radius:50%;display:grid;place-items:center;font-size:20px}
+.bp-chat-messages{flex:1;min-height:0;overflow-y:auto;background:#f7faff;padding:15px;display:flex;flex-direction:column;gap:11px;overscroll-behavior:contain}
+.bp-chat-bubble{padding:11px 13px;border-radius:14px;max-width:92%;white-space:pre-wrap;overflow-wrap:anywhere;background:#fff;color:#0F172A;box-shadow:0 1px 4px rgba(15,23,42,.05)}
+.bp-chat-bubble.user{background:#1E73FF;color:#fff;align-self:flex-end}
+.bp-chat-bubble.bot{align-self:flex-start}
+.bp-chat-actions{padding:10px 13px;display:flex;flex-wrap:wrap;gap:7px;border-top:1px solid #e2e8f0}
+.bp-chat-actions button{border:1px solid #cbdaf5;background:#eef4ff;color:#0F5AD6;border-radius:20px;padding:7px 10px;font:500 12px Poppins,Arial,sans-serif;cursor:pointer}
+.bp-chat-actions button:hover{background:#dceaff}
+.bp-chat-send{display:flex;align-items:center;gap:7px;padding:10px;border-top:1px solid #e2e8f0;background:#fff}
+.bp-chat-send input{flex:1;min-width:0;border:1px solid #d5dfec;border-radius:20px;padding:10px 12px;font:400 13px Poppins,Arial,sans-serif}
+.bp-chat-send button,.bp-chat-lead button{background:#1E73FF;border:0;border-radius:20px;color:white;padding:10px 14px;font:600 13px Poppins,Arial,sans-serif;cursor:pointer}
+.bp-chat-lead{padding:12px;border-top:1px solid #e2e8f0;display:grid;gap:8px;background:white}
+.bp-chat-lead[hidden]{display:none}
+.bp-chat-lead label{font-size:12px;font-weight:600;display:grid;gap:3px}
+.bp-chat-lead input,.bp-chat-lead textarea{width:100%;border:1px solid #cbd5e1;border-radius:9px;padding:8px 10px;font:400 13px Poppins,Arial,sans-serif}
+.bp-chat-lead textarea{resize:vertical;min-height:58px;max-height:95px}
+.bp-chat-lead .bp-chat-note{font-size:11px;color:#64748b;margin:0}
+.bp-chat-lead button:disabled{opacity:.5;cursor:wait}
+.bp-chat-lead a{color:#0F5AD6}
+@media(max-width:600px){.bp-chat-launcher{bottom:85px;right:15px;padding:12px 15px}.bp-chat{bottom:147px;right:10px;width:calc(100vw - 20px);height:min(530px,calc(100dvh - 160px));border-radius:16px}}
+@media(prefers-reduced-motion:reduce){.bp-chat *{scroll-behavior:auto}}
+
+.bp-chat-actions[hidden],.bp-chat-send[hidden]{display:none}
