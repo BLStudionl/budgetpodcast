@@ -1,5 +1,21 @@
 (function(){
   "use strict";
+  // Alleen desktop: mobiele en smalle tabletweergaven laden geen enkele chatbot.
+  // De website wisselt van lay-out op 900px; dezelfde grens gebruiken we hier.
+  var desktopViewport = window.matchMedia("(min-width: 901px)");
+  // Conferbot biedt hier geen gegarandeerde afbreekfunctie voor een geladen widget.
+  // Bij overschakeling tussen mobiele en desktop-layout herlaadt de pagina,
+  // zodat een al geopende externe chat niet op mobiel zichtbaar blijft.
+  if (typeof desktopViewport.addEventListener === "function") {
+    desktopViewport.addEventListener("change", function () {
+      window.location.reload();
+    });
+  } else if (typeof desktopViewport.addListener === "function") {
+    desktopViewport.addListener(function () {
+      window.location.reload();
+    });
+  }
+  if (!desktopViewport.matches) return;
   var settings = window.BPChatSettings || {};
   var botId = String(settings.conferbotBotId || "").trim();
   var botConfigured = /^[a-f0-9]{24}$/i.test(botId);
