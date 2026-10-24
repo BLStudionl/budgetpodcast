@@ -281,6 +281,7 @@ img{max-width:100%;display:block}
 .hidden{display:none!important}
 .cookie-panel{position:fixed;bottom:20px;left:20px;z-index:99999;max-width:430px;padding:22px;background:#fff;border:1px solid #dbe4f2;border-radius:18px;box-shadow:0 15px 45px #0f172a35;color:#0f172a}.cookie-panel h3{margin:0 0 8px;font-size:1.25rem}.cookie-panel p{margin:0 0 14px;font-size:14px;line-height:1.65}.cookie-actions{display:flex;gap:10px}.cookie-actions button{flex:1;padding:11px 12px;border-radius:10px;border:1px solid #1e73ff;cursor:pointer;font-weight:700;background:#fff;color:#1e73ff}.cookie-actions .accept{background:#1e73ff;color:white}.cookie-placeholder{padding:32px 15px;text-align:center;background:#f0f5fd;color:#23324a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;min-height:195px}.cookie-placeholder button{border:0;padding:11px 18px;background:#1e73ff;color:#fff;border-radius:10px;font-weight:700;cursor:pointer}.cookie-placeholder p{font-size:14px;margin:0;max-width:440px}@media(max-width:500px){.cookie-panel{left:12px;right:12px;bottom:12px;max-width:none;padding:17px}}
 </style>
+<link rel="stylesheet" href="/info-form.css">
 <link rel="stylesheet" href="/chat-widget.css">
 </head>
 <body>
@@ -311,6 +312,7 @@ img{max-width:100%;display:block}
         <a class="btn btn-primary" href="#boeken">Plan je opname →</a>
         <a class="btn btn-ghost" href="#tarieven">Bekijk tarieven</a>
       </div>
+      <p class="hero-info-link">Nog aan het oriënteren? <a href="#informatie">Ontvang onze mogelijkheden per e-mail →</a></p>
       <a class="promo-pill hidden" id="heroPromo" href="#tarieven">🔥 <span id="heroPromoText"></span></a>
           </div>
     <div class="hero-visual hero-video" id="heroVisual">
@@ -345,6 +347,54 @@ img{max-width:100%;display:block}
         <div class="price" id="singlePrice"></div>
         <ul class="feature-list" id="singleFeatures"></ul>
         <button class="btn btn-soft btn-full" data-book="single" id="singleCta"></button>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section class="section lead-section" id="informatie" aria-labelledby="informatieTitel">
+  <div class="wrap">
+    <div class="lead-header center">
+      <h2 id="informatieTitel">Klaar om jouw podcast op te nemen?</h2>
+      <p class="muted">Boek direct, of ontvang onze mogelijkheden eerst in je mailbox.</p>
+    </div>
+    <div class="lead-options">
+      <article class="lead-card lead-card--book">
+        <span class="lead-kicker">Ik ben er klaar voor</span>
+        <h3>Plan direct jouw opname</h3>
+        <p>Neem één podcastaflevering op voor €75, of drie afleveringen voor €180. Professionele audio, video en apparatuur zijn inbegrepen.</p>
+        <p>Kies een beschikbaar moment en reken online af.</p>
+        <a class="btn btn-primary" href="#boeken">Boek direct je opname →</a>
+      </article>
+      <article class="lead-card lead-card--email">
+        <span class="lead-kicker">Ik wil eerst meer weten</span>
+        <h3>Ontvang alle mogelijkheden per mail</h3>
+        <p class="muted">Laat je gegevens achter. We sturen je de pakketten, prijzen en directe boekingslinks.</p>
+        <form id="infoRequestForm" name="bp-informatie-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="bp-informatie-aanvraag">
+          <p hidden><label>Laat dit veld leeg: <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <div class="lead-field">
+            <label for="infoName">Voornaam</label>
+            <input id="infoName" name="name" type="text" autocomplete="given-name" maxlength="100" required>
+          </div>
+          <div class="lead-field">
+            <label for="infoEmail">E-mailadres</label>
+            <input id="infoEmail" name="email" type="email" autocomplete="email" maxlength="254" required>
+          </div>
+          <div class="lead-field">
+            <label for="infoPakket">Waar heb je interesse in?</label>
+            <select id="infoPakket" name="pakket" required>
+              <option value="" selected disabled>Maak een keuze</option>
+              <option value="1 aflevering">1 aflevering (€75)</option>
+              <option value="3 afleveringen">3 afleveringen (€180)</option>
+              <option value="Nog aan het orienteren">Ik oriënteer me nog</option>
+            </select>
+          </div>
+          <button class="btn btn-primary btn-full" type="submit">Stuur mij de mogelijkheden →</button>
+          <p class="lead-privacy">Je ontvangt alleen de aangevraagde informatie, geen automatische nieuwsbrief. Lees onze <a href="/privacy">privacyverklaring</a>.</p>
+          <p id="infoRequestStatus" class="lead-form-status hidden" role="status" aria-live="polite"></p>
+        </form>
       </article>
     </div>
   </div>
@@ -780,6 +830,7 @@ showBooking("bundle");
 "url":"https://budgetpodcast.nl/","areaServed":"Den Haag","priceRange":"€€","address":{"@type":"PostalAddress","streetAddress":"Visseringlaan 19","postalCode":"2288 ER","addressLocality":"Rijswijk","addressCountry":"NL"}}
 </script>
 <script src="/chat-config.js" defer></script>
+<script src="/info-form.js" defer></script>
 <script src="/chat-widget.js" defer></script>
 </body>
 </html>
