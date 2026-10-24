@@ -1,24 +1,21 @@
-/* BudgetPodcast informatieaanvraag — sluit aan op de bestaande huisstijl */
-.hero-info-link{margin:14px 0 0;color:var(--grijs-700);font-size:.9rem}
-.hero-info-link a{color:var(--blauw);font-weight:600}
-.lead-section{background:linear-gradient(180deg,#fff,var(--grijs-50));border-top:1px solid var(--grijs-200);scroll-margin-top:90px}
-.lead-header{max-width:720px;margin:0 auto 26px}
-.lead-options{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;align-items:stretch}
-.lead-card{border-radius:var(--radius-l);padding:30px;box-shadow:var(--shadow);display:flex;flex-direction:column}
-.lead-card h3{font-size:clamp(1.25rem,2.4vw,1.6rem);margin:12px 0}
-.lead-kicker{font-size:.8rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
-.lead-card--book{background:var(--nacht);color:#fff}
-.lead-card--book p{color:#d7e3f2}
-.lead-card--book .lead-kicker{color:#92bcff}
-.lead-card--book .btn{margin-top:auto;align-self:flex-start}
-.lead-card--email{background:#fff;border:1px solid var(--grijs-200)}
-.lead-card--email .lead-kicker{color:var(--blauw)}
-.lead-field{margin:0 0 14px}
-.lead-field label{display:block;font-size:.9rem;font-weight:600;margin:0 0 6px}
-.lead-field input,.lead-field select{width:100%;min-height:49px;border:1px solid var(--grijs-200);border-radius:var(--radius-s);padding:11px 14px;font:400 1rem var(--font);background:#fff;color:var(--nacht)}
-.lead-field input:focus,.lead-field select:focus{outline:3px solid rgba(30,115,255,.17);border-color:var(--blauw)}
-.lead-privacy{color:var(--grijs-700);font-size:.81rem;line-height:1.5;margin:10px 0 0}
+/* Klein, ingetogen informatieformulier onderaan de homepage. Boeken blijft de hoofdroute. */
+.lead-section{padding:22px 0 34px;background:var(--grijs-50);border-top:1px solid var(--grijs-200);scroll-margin-top:95px}
+.lead-compact{max-width:620px;margin:0 auto;background:var(--wit);border:1px solid var(--grijs-200);border-radius:var(--radius);box-shadow:var(--shadow-s)}
+.lead-compact summary{list-style:none;cursor:pointer;font-size:.88rem;font-weight:500;line-height:1.5;color:var(--grijs-700);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.lead-compact summary::-webkit-details-marker{display:none}
+.lead-compact summary:hover{color:var(--blauw)}
+.lead-compact summary:focus-visible{outline:3px solid var(--blauw);outline-offset:2px}
+.lead-summary-arrow{color:var(--blauw);font-size:1.1rem;transition:transform .18s}
+.lead-compact[open] .lead-summary-arrow{transform:rotate(180deg)}
+.lead-compact-body{border-top:1px solid var(--grijs-200);padding:18px 20px 20px}
+.lead-compact-body > p{font-size:.88rem;line-height:1.55;margin-bottom:15px}
+.lead-compact .lead-field{margin:0 0 12px}
+.lead-compact .lead-field label{display:block;font-size:.85rem;font-weight:600;margin:0 0 5px}
+.lead-compact .lead-field input,.lead-compact .lead-field select{width:100%;min-height:43px;border:1px solid var(--grijs-200);border-radius:var(--radius-s);padding:9px 12px;font:400 .92rem var(--font);background:#fff;color:var(--nacht)}
+.lead-compact .lead-field input:focus,.lead-compact .lead-field select:focus{outline:3px solid rgba(30,115,255,.17);border-color:var(--blauw)}
+.lead-compact .btn{min-height:44px;font-size:.9rem;padding:0 20px;margin-top:4px}
+.lead-privacy{font-size:.78rem;color:var(--grijs-700);line-height:1.5;margin:10px 0 0}
 .lead-privacy a{color:var(--blauw)}
-.lead-form-status{padding:12px 14px;margin:12px 0 0;background:var(--licht-blauw);color:var(--nacht);border-radius:var(--radius-s);font-weight:600;font-size:.92rem}
+.lead-form-status{padding:11px 13px;margin:12px 0 0;background:var(--licht-blauw);color:var(--nacht);border-radius:var(--radius-s);font-size:.88rem}
 .lead-form-status.is-error{background:#fff1ef;color:#9b1c1c}
-@media(max-width:820px){.lead-options{grid-template-columns:1fr}.lead-card{padding:22px}.lead-card--book .btn{width:100%}}
+@media(max-width:620px){.lead-section{padding:18px 0 26px}.lead-compact-body{padding:15px}.lead-compact summary{padding:12px 14px}}
