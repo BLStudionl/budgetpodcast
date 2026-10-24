@@ -312,7 +312,6 @@ img{max-width:100%;display:block}
         <a class="btn btn-primary" href="#boeken">Plan je opname →</a>
         <a class="btn btn-ghost" href="#tarieven">Bekijk tarieven</a>
       </div>
-      <p class="hero-info-link">Nog aan het oriënteren? <a href="#informatie">Ontvang onze mogelijkheden per e-mail →</a></p>
       <a class="promo-pill hidden" id="heroPromo" href="#tarieven">🔥 <span id="heroPromoText"></span></a>
           </div>
     <div class="hero-visual hero-video" id="heroVisual">
@@ -352,53 +351,6 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-
-<section class="section lead-section" id="informatie" aria-labelledby="informatieTitel">
-  <div class="wrap">
-    <div class="lead-header center">
-      <h2 id="informatieTitel">Klaar om jouw podcast op te nemen?</h2>
-      <p class="muted">Boek direct, of ontvang onze mogelijkheden eerst in je mailbox.</p>
-    </div>
-    <div class="lead-options">
-      <article class="lead-card lead-card--book">
-        <span class="lead-kicker">Ik ben er klaar voor</span>
-        <h3>Plan direct jouw opname</h3>
-        <p>Neem één podcastaflevering op voor €75, of drie afleveringen voor €180. Professionele audio, video en apparatuur zijn inbegrepen.</p>
-        <p>Kies een beschikbaar moment en reken online af.</p>
-        <a class="btn btn-primary" href="#boeken">Boek direct je opname →</a>
-      </article>
-      <article class="lead-card lead-card--email">
-        <span class="lead-kicker">Ik wil eerst meer weten</span>
-        <h3>Ontvang alle mogelijkheden per mail</h3>
-        <p class="muted">Laat je gegevens achter. We sturen je de pakketten, prijzen en directe boekingslinks.</p>
-        <form id="infoRequestForm" name="bp-informatie-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="bp-informatie-aanvraag">
-          <p hidden><label>Laat dit veld leeg: <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-          <div class="lead-field">
-            <label for="infoName">Voornaam</label>
-            <input id="infoName" name="name" type="text" autocomplete="given-name" maxlength="100" required>
-          </div>
-          <div class="lead-field">
-            <label for="infoEmail">E-mailadres</label>
-            <input id="infoEmail" name="email" type="email" autocomplete="email" maxlength="254" required>
-          </div>
-          <div class="lead-field">
-            <label for="infoPakket">Waar heb je interesse in?</label>
-            <select id="infoPakket" name="pakket" required>
-              <option value="" selected disabled>Maak een keuze</option>
-              <option value="1 aflevering">1 aflevering (€75)</option>
-              <option value="3 afleveringen">3 afleveringen (€180)</option>
-              <option value="Nog aan het orienteren">Ik oriënteer me nog</option>
-            </select>
-          </div>
-          <button class="btn btn-primary btn-full" type="submit">Stuur mij de mogelijkheden →</button>
-          <p class="lead-privacy">Je ontvangt alleen de aangevraagde informatie, geen automatische nieuwsbrief. Lees onze <a href="/privacy">privacyverklaring</a>.</p>
-          <p id="infoRequestStatus" class="lead-form-status hidden" role="status" aria-live="polite"></p>
-        </form>
-      </article>
-    </div>
-  </div>
-</section>
 
 <section class="section booking" id="boeken">
   <div class="wrap">
@@ -476,6 +428,41 @@ img{max-width:100%;display:block}
       </form>
       <ul class="contact-list" id="contactList"></ul>
     </div>
+  </div>
+</section>
+
+<section class="lead-section" id="informatie" aria-label="Informatie per e-mail aanvragen">
+  <div class="wrap">
+    <details class="lead-compact">
+      <summary>Wil je de mogelijkheden liever per e-mail ontvangen? <span class="lead-summary-arrow" aria-hidden="true">⌄</span></summary>
+      <div class="lead-compact-body">
+        <p class="muted">Vul je gegevens in en ontvang een overzicht van onze pakketten en de boekingsmogelijkheden.</p>
+        <form id="infoRequestForm" name="bp-informatie-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="bp-informatie-aanvraag">
+          <p hidden><label>Laat dit veld leeg: <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <div class="lead-field">
+            <label for="infoName">Voornaam</label>
+            <input id="infoName" name="name" type="text" autocomplete="given-name" maxlength="100" required>
+          </div>
+          <div class="lead-field">
+            <label for="infoEmail">E-mailadres</label>
+            <input id="infoEmail" name="email" type="email" autocomplete="email" maxlength="254" required>
+          </div>
+          <div class="lead-field">
+            <label for="infoPakket">Waar heb je interesse in?</label>
+            <select id="infoPakket" name="pakket" required>
+              <option value="" selected disabled>Maak een keuze</option>
+              <option value="1 aflevering">1 aflevering (€75)</option>
+              <option value="3 afleveringen">3 afleveringen (€180)</option>
+              <option value="Nog aan het orienteren">Ik oriënteer me nog</option>
+            </select>
+          </div>
+          <button class="btn btn-primary btn-full" type="submit">Verstuur aanvraag</button>
+          <p class="lead-privacy">Je ontvangt alleen de gevraagde informatie, geen nieuwsbrief. Bekijk onze <a href="/privacy">privacyverklaring</a>.</p>
+          <p id="infoRequestStatus" class="lead-form-status hidden" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </details>
   </div>
 </section>
 </main>
