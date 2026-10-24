@@ -1,21 +1,14 @@
-/* Klein, ingetogen informatieformulier onderaan de homepage. Boeken blijft de hoofdroute. */
-.lead-section{padding:22px 0 34px;background:var(--grijs-50);border-top:1px solid var(--grijs-200);scroll-margin-top:95px}
-.lead-compact{max-width:620px;margin:0 auto;background:var(--wit);border:1px solid var(--grijs-200);border-radius:var(--radius);box-shadow:var(--shadow-s)}
-.lead-compact summary{list-style:none;cursor:pointer;font-size:.88rem;font-weight:500;line-height:1.5;color:var(--grijs-700);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.lead-compact summary::-webkit-details-marker{display:none}
-.lead-compact summary:hover{color:var(--blauw)}
-.lead-compact summary:focus-visible{outline:3px solid var(--blauw);outline-offset:2px}
-.lead-summary-arrow{color:var(--blauw);font-size:1.1rem;transition:transform .18s}
-.lead-compact[open] .lead-summary-arrow{transform:rotate(180deg)}
-.lead-compact-body{border-top:1px solid var(--grijs-200);padding:18px 20px 20px}
-.lead-compact-body > p{font-size:.88rem;line-height:1.55;margin-bottom:15px}
-.lead-compact .lead-field{margin:0 0 12px}
-.lead-compact .lead-field label{display:block;font-size:.85rem;font-weight:600;margin:0 0 5px}
-.lead-compact .lead-field input,.lead-compact .lead-field select{width:100%;min-height:43px;border:1px solid var(--grijs-200);border-radius:var(--radius-s);padding:9px 12px;font:400 .92rem var(--font);background:#fff;color:var(--nacht)}
-.lead-compact .lead-field input:focus,.lead-compact .lead-field select:focus{outline:3px solid rgba(30,115,255,.17);border-color:var(--blauw)}
-.lead-compact .btn{min-height:44px;font-size:.9rem;padding:0 20px;margin-top:4px}
-.lead-privacy{font-size:.78rem;color:var(--grijs-700);line-height:1.5;margin:10px 0 0}
-.lead-privacy a{color:var(--blauw)}
-.lead-form-status{padding:11px 13px;margin:12px 0 0;background:var(--licht-blauw);color:var(--nacht);border-radius:var(--radius-s);font-size:.88rem}
-.lead-form-status.is-error{background:#fff1ef;color:#9b1c1c}
-@media(max-width:620px){.lead-section{padding:18px 0 26px}.lead-compact-body{padding:15px}.lead-compact summary{padding:12px 14px}}
+/* Rustige aanvraagmogelijkheid in het bestaande contactgedeelte */
+#contact .contact-grid{grid-template-columns:minmax(0,1fr) minmax(220px,.8fr);gap:40px;align-items:start}
+#contact form{max-width:520px}
+#contact .lead-field{margin-bottom:14px}
+#contact .lead-field label{display:block;font-size:.91rem;font-weight:600;margin-bottom:6px}
+#contact .lead-field .optional{font-weight:400;color:var(--grijs-400)}
+#contact .lead-field input,#contact .lead-field select,#contact .lead-field textarea{width:100%;min-height:48px;border:1px solid var(--grijs-200);border-radius:var(--radius-s);padding:11px 14px;font:400 1rem var(--font);background:#fff;color:var(--nacht)}
+#contact .lead-field textarea{min-height:94px;resize:vertical}
+#contact .lead-field input:focus,#contact .lead-field select:focus,#contact .lead-field textarea:focus{outline:3px solid rgba(30,115,255,.17);border-color:var(--blauw)}
+#contact .lead-privacy{font-size:.81rem;line-height:1.55;color:var(--grijs-700);margin:12px 0 0}
+#contact .lead-privacy a{color:var(--blauw)}
+#contact .lead-form-status{padding:12px 14px;margin:12px 0 0;background:var(--licht-blauw);color:var(--nacht);border-radius:var(--radius-s);font-size:.92rem}
+#contact .lead-form-status.is-error{background:#fff1ef;color:#9b1c1c}
+@media(max-width:820px){#contact .contact-grid{grid-template-columns:1fr;gap:22px}}
