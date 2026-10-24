@@ -281,6 +281,7 @@ img{max-width:100%;display:block}
 .hidden{display:none!important}
 .cookie-panel{position:fixed;bottom:20px;left:20px;z-index:99999;max-width:430px;padding:22px;background:#fff;border:1px solid #dbe4f2;border-radius:18px;box-shadow:0 15px 45px #0f172a35;color:#0f172a}.cookie-panel h3{margin:0 0 8px;font-size:1.25rem}.cookie-panel p{margin:0 0 14px;font-size:14px;line-height:1.65}.cookie-actions{display:flex;gap:10px}.cookie-actions button{flex:1;padding:11px 12px;border-radius:10px;border:1px solid #1e73ff;cursor:pointer;font-weight:700;background:#fff;color:#1e73ff}.cookie-actions .accept{background:#1e73ff;color:white}.cookie-placeholder{padding:32px 15px;text-align:center;background:#f0f5fd;color:#23324a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;min-height:195px}.cookie-placeholder button{border:0;padding:11px 18px;background:#1e73ff;color:#fff;border-radius:10px;font-weight:700;cursor:pointer}.cookie-placeholder p{font-size:14px;margin:0;max-width:440px}@media(max-width:500px){.cookie-panel{left:12px;right:12px;bottom:12px;max-width:none;padding:17px}}
 </style>
+<link rel="stylesheet" href="/info-form.css">
 <link rel="stylesheet" href="/chat-widget.css">
 </head>
 <body>
@@ -350,6 +351,7 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
+
 <section class="section booking" id="boeken">
   <div class="wrap">
     <h2 class="center">Plan je opname</h2>
@@ -410,24 +412,43 @@ img{max-width:100%;display:block}
 
 <section class="section" id="contact" style="background:var(--grijs-50);border-top:1px solid var(--grijs-200)">
   <div class="wrap">
-    <h2>Nog een vraag?</h2>
-    <p class="muted">Boeken kan direct online. Heb je iets anders nodig, stuur dan een bericht.</p>
+    <h2>Meer weten over een opname?</h2>
+    <p class="muted">Boeken kan direct bij de tarieven hierboven. Heb je nog een vraag of ontvang je liever eerst de mogelijkheden? Laat dan je gegevens achter.</p>
     <div class="contact-grid">
-      <form id="contactForm" novalidate>
-        <div class="field"><label for="cName">Naam</label>
-          <input id="cName" autocomplete="name"><span class="error">Vul je naam in.</span></div>
-        <div class="field"><label for="cMail">E-mail</label>
-          <input id="cMail" type="email" autocomplete="email"><span class="error">Vul een geldig e-mailadres in.</span></div>
-        <div class="field"><label for="cMsg">Bericht</label>
-          <textarea id="cMsg"></textarea><span class="error">Vul je bericht in.</span></div>
-        <button class="btn btn-primary" type="submit">Verstuur bericht</button>
-        <p id="contactDone" class="hidden" style="margin-top:14px;color:var(--blauw);font-weight:600">
-          Bedankt, je bericht is verstuurd. We reageren zo snel mogelijk.</p>
-      </form>
+      <form id="infoRequestForm" name="bp-informatie-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="bp-informatie-aanvraag">
+          <p hidden><label>Laat dit veld leeg: <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <div class="lead-field">
+            <label for="infoName">Voornaam</label>
+            <input id="infoName" name="name" type="text" autocomplete="given-name" maxlength="100" required>
+          </div>
+          <div class="lead-field">
+            <label for="infoEmail">E-mailadres</label>
+            <input id="infoEmail" name="email" type="email" autocomplete="email" maxlength="254" required>
+          </div>
+          <div class="lead-field">
+            <label for="infoPakket">Waar heb je interesse in?</label>
+            <select id="infoPakket" name="pakket" required>
+              <option value="" selected disabled>Maak een keuze</option>
+              <option value="1 aflevering">1 aflevering (€75)</option>
+              <option value="3 afleveringen">3 afleveringen (€180)</option>
+              <option value="Nog aan het orienteren">Ik oriënteer me nog</option>
+            </select>
+          </div>
+          <div class="lead-field">
+            <label for="infoMessage">Heb je een specifieke vraag? <span class="optional">(optioneel)</span></label>
+            <textarea id="infoMessage" name="message" rows="3" maxlength="1200" placeholder="Bijvoorbeeld over de opnamesessie of de mogelijkheden"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Verstuur aanvraag</button>
+          <p class="lead-privacy">We sturen je de gevraagde informatie en eventuele antwoorden per e-mail, geen nieuwsbrief. Bekijk onze <a href="/privacy">privacyverklaring</a>.</p>
+          <p id="infoRequestStatus" class="lead-form-status hidden" role="status" aria-live="polite"></p>
+        </form>
       <ul class="contact-list" id="contactList"></ul>
     </div>
   </div>
 </section>
+
+
 </main>
 
 <footer class="footer">
@@ -677,19 +698,6 @@ if(c.tiktok)    socials.push('<a href="'+c.tiktok+'">TikTok</a>');
 $("#socials").innerHTML = socials.join("");
 $("#copy").textContent = "© " + new Date().getFullYear() + " " + cfg.brand.name + ". Alle rechten voorbehouden.";
 
-$("#contactForm").addEventListener("submit", e => {
-  e.preventDefault();
-  let ok = true;
-  [["#cName", v=>v.trim().length>1],
-   ["#cMail", v=>/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(v)],
-   ["#cMsg",  v=>v.trim().length>3]].forEach(([sel,test]) => {
-    const el = $(sel), valid = test(el.value);
-    el.closest(".field").classList.toggle("invalid", !valid);
-    if(!valid) ok = false;
-  });
-  if(ok){ e.target.reset(); $("#contactDone").classList.remove("hidden"); }
-});
-
 /* =========================================================
    BOOKING VIA CAL.COM
    ========================================================= */
@@ -780,6 +788,7 @@ showBooking("bundle");
 "url":"https://budgetpodcast.nl/","areaServed":"Den Haag","priceRange":"€€","address":{"@type":"PostalAddress","streetAddress":"Visseringlaan 19","postalCode":"2288 ER","addressLocality":"Rijswijk","addressCountry":"NL"}}
 </script>
 <script src="/chat-config.js" defer></script>
+<script src="/info-form.js" defer></script>
 <script src="/chat-widget.js" defer></script>
 </body>
 </html>
