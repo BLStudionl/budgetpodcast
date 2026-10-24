@@ -412,32 +412,10 @@ img{max-width:100%;display:block}
 
 <section class="section" id="contact" style="background:var(--grijs-50);border-top:1px solid var(--grijs-200)">
   <div class="wrap">
-    <h2>Nog een vraag?</h2>
-    <p class="muted">Boeken kan direct online. Heb je iets anders nodig, stuur dan een bericht.</p>
+    <h2>Meer weten over een opname?</h2>
+    <p class="muted">Boeken kan direct bij de tarieven hierboven. Heb je nog een vraag of ontvang je liever eerst de mogelijkheden? Laat dan je gegevens achter.</p>
     <div class="contact-grid">
-      <form id="contactForm" novalidate>
-        <div class="field"><label for="cName">Naam</label>
-          <input id="cName" autocomplete="name"><span class="error">Vul je naam in.</span></div>
-        <div class="field"><label for="cMail">E-mail</label>
-          <input id="cMail" type="email" autocomplete="email"><span class="error">Vul een geldig e-mailadres in.</span></div>
-        <div class="field"><label for="cMsg">Bericht</label>
-          <textarea id="cMsg"></textarea><span class="error">Vul je bericht in.</span></div>
-        <button class="btn btn-primary" type="submit">Verstuur bericht</button>
-        <p id="contactDone" class="hidden" style="margin-top:14px;color:var(--blauw);font-weight:600">
-          Bedankt, je bericht is verstuurd. We reageren zo snel mogelijk.</p>
-      </form>
-      <ul class="contact-list" id="contactList"></ul>
-    </div>
-  </div>
-</section>
-
-<section class="lead-section" id="informatie" aria-label="Informatie per e-mail aanvragen">
-  <div class="wrap">
-    <details class="lead-compact">
-      <summary>Wil je de mogelijkheden liever per e-mail ontvangen? <span class="lead-summary-arrow" aria-hidden="true">⌄</span></summary>
-      <div class="lead-compact-body">
-        <p class="muted">Vul je gegevens in en ontvang een overzicht van onze pakketten en de boekingsmogelijkheden.</p>
-        <form id="infoRequestForm" name="bp-informatie-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <form id="infoRequestForm" name="bp-informatie-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="bp-informatie-aanvraag">
           <p hidden><label>Laat dit veld leeg: <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <div class="lead-field">
@@ -457,14 +435,20 @@ img{max-width:100%;display:block}
               <option value="Nog aan het orienteren">Ik oriënteer me nog</option>
             </select>
           </div>
-          <button class="btn btn-primary btn-full" type="submit">Verstuur aanvraag</button>
-          <p class="lead-privacy">Je ontvangt alleen de gevraagde informatie, geen nieuwsbrief. Bekijk onze <a href="/privacy">privacyverklaring</a>.</p>
+          <div class="lead-field">
+            <label for="infoMessage">Heb je een specifieke vraag? <span class="optional">(optioneel)</span></label>
+            <textarea id="infoMessage" name="message" rows="3" maxlength="1200" placeholder="Bijvoorbeeld over de opnamesessie of de mogelijkheden"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Verstuur aanvraag</button>
+          <p class="lead-privacy">We sturen je de gevraagde informatie en eventuele antwoorden per e-mail, geen nieuwsbrief. Bekijk onze <a href="/privacy">privacyverklaring</a>.</p>
           <p id="infoRequestStatus" class="lead-form-status hidden" role="status" aria-live="polite"></p>
         </form>
-      </div>
-    </details>
+      <ul class="contact-list" id="contactList"></ul>
+    </div>
   </div>
 </section>
+
+
 </main>
 
 <footer class="footer">
@@ -713,19 +697,6 @@ if(c.instagram) socials.push('<a href="'+c.instagram+'">Instagram</a>');
 if(c.tiktok)    socials.push('<a href="'+c.tiktok+'">TikTok</a>');
 $("#socials").innerHTML = socials.join("");
 $("#copy").textContent = "© " + new Date().getFullYear() + " " + cfg.brand.name + ". Alle rechten voorbehouden.";
-
-$("#contactForm").addEventListener("submit", e => {
-  e.preventDefault();
-  let ok = true;
-  [["#cName", v=>v.trim().length>1],
-   ["#cMail", v=>/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(v)],
-   ["#cMsg",  v=>v.trim().length>3]].forEach(([sel,test]) => {
-    const el = $(sel), valid = test(el.value);
-    el.closest(".field").classList.toggle("invalid", !valid);
-    if(!valid) ok = false;
-  });
-  if(ok){ e.target.reset(); $("#contactDone").classList.remove("hidden"); }
-});
 
 /* =========================================================
    BOOKING VIA CAL.COM
